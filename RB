@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px #ccc;
+        }
+        input, textarea {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: blue;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #resumeOutput {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Resume Builder</h2>
+        <input type="text" id="name" placeholder="Enter your name">
+        <input type="text" id="email" placeholder="Enter your email">
+        <input type="text" id="phone" placeholder="Enter your phone number">
+        <textarea id="experience" placeholder="Enter your experience"></textarea>
+        <button onclick="generateResume()">Generate Resume</button>
+    </div>
+
+    <div id="resumeOutput" class="container">
+        <h2>Your Resume</h2>
+        <p><strong>Name:</strong> <span id="outputName"></span></p>
+        <p><strong>Email:</strong> <span id="outputEmail"></span></p>
+        <p><strong>Phone:</strong> <span id="outputPhone"></span></p>
+        <p><strong>Experience:</strong></p>
+        <p id="outputExperience"></p>
+    </div>
+
+    <script>
+        function generateResume() {
+            document.getElementById("outputName").textContent = document.getElementById("name").value;
+            document.getElementById("outputEmail").textContent = document.getElementById("email").value;
+            document.getElementById("outputPhone").textContent = document.getElementById("phone").value;
+            document.getElementById("outputExperience").textContent = document.getElementById("experience").value;
+            document.getElementById("resumeOutput").style.display = "block";
+        }
+    </script>
+</body>
+</html>
